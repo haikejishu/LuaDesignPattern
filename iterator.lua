@@ -9,7 +9,7 @@
 
 Iterator = {}
 
-function Iterator:new()
+function Iterator:new(o)
 	o = o or {}
 	setmetatable(o, self)
 	self.__index = self
@@ -19,7 +19,7 @@ end
 ConcreteIterator = Iterator:new()
 
 function ConcreteIterator:new(d)
-	o = o or {}
+	local o =  {}
 	setmetatable(o, self)
 	self.__index = self
 	o.data = d
